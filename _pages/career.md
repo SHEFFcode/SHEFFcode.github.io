@@ -103,7 +103,7 @@ Feb 2016 – Jun 2016, San Francisco, CA
 
 ### Full-Stack Engineer | Bampit, Chicago, IL  
 
-Nov 2014 – Dec 2015, San Francisco, CA
+Nov 2014 – Dec 2015, Chicago, IL
 
 - Wrote C++ classes in cocos 2dx for a native cross platform application called bird clash.
 - Implemented cross platform monetization framework called Soomla to enable in app purchases.
