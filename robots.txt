@@ -1,0 +1,8 @@
+User-agent: Diffbot
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: *
+Disallow: /
