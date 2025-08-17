@@ -142,6 +142,11 @@ social:
       name: 'Github',
       link: 'https://github.com/SHEFFcode',
     }
+  - {
+      icon: 'fa-brands fa-leetcode',
+      name: 'Github',
+      link: 'https://github.com/SHEFFcode',
+    }
 
 # Example of adding a new link to the footer - {icon: "fa-brands fa-mastodon", name: "Mastodon", link: "https://mastodon.social"}
 # Other icons can be found at https://fontawesome.com/icons
