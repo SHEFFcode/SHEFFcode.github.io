@@ -143,7 +143,7 @@ social:
       link: 'https://github.com/SHEFFcode',
     }
   - {
-      icon: 'fa-brands fa-leetcode',
+      icon: 'cib-leetcode',
       name: 'Github',
       link: 'https://github.com/SHEFFcode',
     }
