@@ -17,20 +17,21 @@ title: Career
 
 Aug 2021 – Present, Chicago, Illinois Hybrid
 
+- Lead research into an AI assisted documentation and system status agent to improve onboarding and reduce load on engineers.
+- Architected and lead the implementation of a new the payment processing for improved resiliency reducing SIs significantly.
+- Architected and assisted in implementation of the payment protection feature for Avant Credit with a very large financial impact.
+- Architected and lead the implementation of loss mitigation features with a large dollar amount and impact for the company.
 - Recognized by 2 company awards for being one of the leaders of successful effort to bring external vendor software in house.
 - Recognized by a company team award for reducing engineer intensive interventions by 50%, and growing!
-- Architected and lead the implementation of loss mitigation features with a large dollar amount and impact for the company.
-- Supported a successful Avant MLS credit card launch with a large financial impact for the company.
-- Drove overall engineering direction (domain-service map, prioritization, technology choices).
-- Supported various data science tasks, including query performance issues, character set unification, lambda job performance issues etc.
-- Led new vendor onboarding (vendor communication + implementation)
-- Supported the legal and product teams on PCI compliance and other  yearly audits.
-- Worked with SREs to set up incident runbooks, establishing observability and alerting from scratch
-- Solved multiple memory leak issues, reducing payment processing outages 95% to hit SLAs and repair relations with vendors.
 - Supported new mobile app launch by building user data aggregation services that were not possible on the previous platform.
+- Worked on building Avant Banking product’s NACHA file generation, ACH returns, DB performance and post-launch support.
+- The above allowed for a successful Avant MLS credit card launch with a large financial impact for the company.
+- Supported PCI 4.0 and vendor audits by providing code documentation to support strong internal controls.
+- Architected an implementation of a loan buyer flow that will have a large financial impact.
+- Worked with SREs to set up the above in-house from scratch, writing incident runbooks, establishing observability and alerting.
+- Solved multiple memory leak issues, reducing payment processing outages 95% to hit SLAs and repair relations with vendors.
 - Recognized by other teams in the company as a resource on observability and alerting both on old and new platforms.
-- Architected an implementation of a loan marketplace flow that will have a large impact once implemented in the coming year.
-- Helped set up CI / CD pipelines and overall technology vision for the short-lived Avant banking platform.
+- Lead Avant’s efforts to host Ruby and Python dev groups to spread knowledge and contribute to the community.
 
 **Technologies used:** Rails, Django, Sidekiq, Rabbit, Celery, Django, Lambda, BulkJob, Redis, PostGres, DataDog, Sentry
 
