@@ -3,7 +3,7 @@ layout: post
 title: Concurrency and Parallelism Deep Dive
 description: Let's dive into various approaches to concurrency and parallelism across various languages
 date: 2025-08-30 15:01:35 +0300
-image: '/images/LeetCode.png'
+image: '/images/concurrency-vs-parallelism.png'
 image_caption: 'Concurrency and Parallelism [howtodoinjava.com](../images/concurrency-vs-parallelism.png)'
 tags: [Technologies]
 ---
