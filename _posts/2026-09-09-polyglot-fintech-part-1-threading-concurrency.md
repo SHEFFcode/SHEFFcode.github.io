@@ -2,7 +2,7 @@
 layout: post
 title: "Polyglot Fintech Part 1: Threading, Thread Safety & Structured Concurrency"
 description: "Cross-comparing multithreading, race conditions, memory models, and modern structured concurrency across Python 3.14+, Ruby 3.4+, Java 26+, and Rust 1.85+ in mission-critical financial systems."
-date: 2026-09-10 10:00:00 -0500
+date: 2026-09-09 08:00:00 -0500
 image: '/images/concurrency-vs-parallelism.png'
 image_caption: 'Concurrency vs Parallelism across modern VM and systems memory models'
 tags: [Technologies, Fintech, Concurrency, Architecture, Rust]
