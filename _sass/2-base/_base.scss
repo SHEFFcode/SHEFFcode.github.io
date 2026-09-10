@@ -122,13 +122,43 @@ blockquote {
 }
 
 pre {
-  overflow: auto;
-  padding: 15px;
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 18px 20px;
   margin-bottom: 0;
   font-size: 14px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-all;
+  line-height: 1.6;
+  white-space: pre;
+  word-wrap: normal;
+  word-break: normal;
+  color: var(--heading-font-color);
+  background: var(--syntax-highlighting-background);
+  border-radius: 8px;
+
+  code {
+    display: inline-block;
+    min-width: 100%;
+    padding: 0;
+    margin: 0;
+    font-size: 13.5px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    line-height: 1.6;
+    white-space: pre;
+    word-wrap: normal;
+    word-break: normal;
+    background: transparent;
+  }
+}
+
+code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 0.88em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background-color: var(--background-alt-color);
   color: var(--heading-font-color);
 }
 
@@ -176,42 +206,77 @@ hr {
 
 .table-container {
   display: block;
+  width: 100%;
   max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 24px;
+  margin-bottom: 36px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-color);
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--background-alt-color);
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 8px;
+    opacity: 0.6;
+  }
+
+  table {
+    margin: 0;
+    border: none;
+  }
 }
 
 table {
-  font-size: 12px;
-  color: var(--dark);
   width: 100%;
-  border-width: 1px;
-  border-color: var(--background-alt-color);
+  min-width: 650px;
   border-collapse: collapse;
+  margin-top: 24px;
+  margin-bottom: 36px;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--heading-font-color);
 }
 
 table th {
-  padding: 10px;
-  font-size: 16px;
+  padding: 12px 16px;
+  font-size: 14px;
   text-align: left;
-  border: 1px solid var(--th-color);
+  border: 1px solid var(--border-color);
   color: var(--heading-font-color);
   font-weight: 700;
-  background-color: var(--th-color);
+  background-color: var(--background-alt-color);
+  white-space: nowrap;
 }
 
 table tr {
-  background-color: var(--tr-color);
+  background-color: transparent;
   transition: all .2s ease;
+
   &:nth-child(even) {
-    background-color: transparent;
+    background-color: var(--background-alt-color);
+  }
+
+  &:hover {
+    background-color: var(--background-alt-color-2);
   }
 }
 
 table td {
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid var(--background-alt-color);
+  padding: 12px 16px;
+  font-size: 13.5px;
+  border: 1px solid var(--border-color);
+  vertical-align: top;
 }
 
 .lazy {

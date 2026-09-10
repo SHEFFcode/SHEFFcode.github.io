@@ -230,6 +230,26 @@
     img, .js-reframe {
       border-radius: 16px;
     }
+
+    .highlighter-rouge,
+    > pre,
+    .table-container {
+      margin-left: calc(-1 * (#{$container-offset} + 4px));
+      margin-right: calc(-1 * (#{$container-offset} + 4px));
+      border-radius: 0;
+      border-left: none;
+      border-right: none;
+
+      pre {
+        padding-left: calc(#{$container-offset} + 4px);
+        padding-right: calc(#{$container-offset} + 4px);
+        border-radius: 0;
+      }
+    }
+
+    .table-container table {
+      min-width: 580px;
+    }
   }
 }
 
