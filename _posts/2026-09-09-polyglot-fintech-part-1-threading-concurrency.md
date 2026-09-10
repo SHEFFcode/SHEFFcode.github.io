@@ -34,20 +34,12 @@ In this first installment of our **Polyglot Fintech Architecture Series**, we co
 
 To understand thread safety, we must inspect how each runtime interfaces with the host CPU and operating system kernel:
 
-```
-┌────────────────────────────────────────────────────────────────────────────────────────┐
-│                               THREADING LANDSCAPE (2026)                               │
-├──────────────────┬───────────────────┬─────────────────────────────────┬───────────────┤
-│ Python 3.14+     │ Ruby 3.4+         │ Java 26+                        │ Rust 1.85+    │
-├──────────────────┼───────────────────┼─────────────────────────────────┼───────────────┤
-│ • Free-threading │ • GVL per process │ • OS Threads & Virtual Threads  │ • OS Threads  │
-│   (PEP 703)      │ • 1 thread on CPU │ • True multi-core execution     │ • True native │
-│ • True multi-core│   at any instant  │ • Java Memory Model (JMM)       │   parallelism │
-│ • mimalloc heap  │ • Mutexes needed  │ • Hardware CAS (AtomicLong)     │ • Send & Sync │
-│   (allocator)    │   for multi-step  │ • StructuredTaskScope (JEP 480) │   (No data    │
-│                  │   I/O operations  │                                 │    races!)    │
-└──────────────────┴───────────────────┴─────────────────────────────────┴───────────────┘
-```
+| Runtime & Language | Concurrency Architecture | Execution Model | Memory Model & Heap | Synchronization & Scoping |
+|---|---|---|---|---|
+| **Python 3.14+** | Free-threaded CPython (PEP 703) | True multi-core bytecode parallelism | `mimalloc` concurrent heap allocator | Explicit `threading.Lock`, `asyncio.TaskGroup` |
+| **Ruby 3.4+** | CRuby / MRI (YJIT enabled) | GVL serialized bytecode (1 thread on CPU) | Thread-shared heap; GVL released on I/O | Explicit `Mutex#synchronize`, `Async::Barrier` |
+| **Java 26+** | HotSpot JVM (Project Loom) | OS Threads + 1M+ Virtual Threads | Java Memory Model (JMM), volatile fences | Hardware CAS (`CMPXCHG`), `StructuredTaskScope` |
+| **Rust 1.85+** | Bare-metal LLVM Native | Direct native OS threads & Rayon/Tokio | Zero-cost abstractions, zero GC runtime | Compile-time `Send`/`Sync`, `crossbeam::scope` |
 
 1. **Python 3.14+ (Free-Threaded CPython)**:
    Historically, CPython's Global Interpreter Lock (GIL) serialized bytecode execution. In Python 3.14+, free-threaded builds allow multiple OS threads to execute pure Python bytecode across multiple physical cores simultaneously. To eliminate allocator lock contention across cores without the GIL, Python 3.14 replaces the legacy `pymalloc` allocator with Microsoft's **`mimalloc`** a high-performance concurrent memory allocator designed by Microsoft Research—not to be confused with standard `malloc`. While this enables true parallel execution, it also exposes Python applications to the raw multi-threaded race conditions Java developers have managed for three decades.

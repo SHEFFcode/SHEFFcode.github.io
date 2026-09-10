@@ -2,13 +2,42 @@
   Syntax Highlighting
 */
 
-.highlight {
+.highlighter-rouge {
   margin-bottom: 32px;
+  max-width: 100%;
+}
+
+.highlight {
+  margin-bottom: 0;
   border-radius: 8px;
   background: var(--syntax-highlighting-background);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar,
+  pre::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track,
+  pre::-webkit-scrollbar-track {
+    background: var(--background-alt-color);
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb,
+  pre::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 8px;
+    opacity: 0.6;
+  }
 
   .highlighter-rouge & {
     background: var(--syntax-highlighting-background);
+  }
+
+  pre {
+    margin-bottom: 0;
   }
 
   .c     { color: #998; font-style: italic } // Comment

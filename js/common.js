@@ -219,4 +219,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
   load_posts_button&&load_posts_button.addEventListener("click",function(e){e.preventDefault();var o=document.querySelector(".pagination"),e=pagination_next_url.split("/page")[0]+"/page/"+pagination_next_page_number+"/";fetch(e).then(function(e){if(e.ok)return e.text()}).then(function(e){var n=document.createElement("div");n.innerHTML=e;for(var t=document.querySelector(".grid"),a=n.querySelectorAll(".article--grid"),i=0;i<a.length;i++)t.appendChild(a.item(i)); new LazyLoad({ elements_selector: ".lazy" }); pagination_next_page_number++,pagination_next_page_number>pagination_available_pages_number&&(o.style.display="none")})});
 
+
+  /* =================================
+  // Responsive Tables Auto-Wrap
+  ================================= */
+  var contentContainers = document.querySelectorAll('.post__content, .page__content');
+  contentContainers.forEach(function(container) {
+    var tables = container.querySelectorAll('table');
+    tables.forEach(function(table) {
+      if (!table.parentElement.classList.contains('table-container')) {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'table-container';
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+      }
+    });
+  });
+
 });
