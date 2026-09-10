@@ -202,6 +202,7 @@
 .page__content {
   max-width: 780px;
   margin: 0 auto 60px;
+  line-height: 1.7;
   color: var(--text-color);
 
   img, .js-reframe {
@@ -240,10 +241,18 @@
       border-left: none;
       border-right: none;
 
+      .highlight {
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+      }
+
       pre {
         padding-left: calc(#{$container-offset} + 4px);
         padding-right: calc(#{$container-offset} + 4px);
         border-radius: 0;
+        border-left: none;
+        border-right: none;
       }
     }
 
