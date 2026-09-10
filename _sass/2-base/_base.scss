@@ -134,8 +134,9 @@ pre {
   white-space: pre;
   word-wrap: normal;
   word-break: normal;
-  color: var(--heading-font-color);
-  background: var(--syntax-highlighting-background);
+  color: var(--syntax-text);
+  background: var(--syntax-bg);
+  border: 1px solid var(--syntax-border);
   border-radius: 8px;
 
   code {
@@ -144,22 +145,35 @@ pre {
     padding: 0;
     margin: 0;
     font-size: 13.5px;
-    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
     line-height: 1.6;
     white-space: pre;
     word-wrap: normal;
     word-break: normal;
     background: transparent;
+    border: none;
+    border-radius: 0;
   }
 }
 
-code {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
-  font-size: 0.88em;
-  padding: 2px 6px;
+// Inline code styling: only targets inline code, never pre code blocks
+:not(pre) > code {
+  display: inline-block;
+  vertical-align: baseline;
+  font-family: ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.85em;
+  line-height: 1.35;
+  padding: 1px 5px;
+  margin: 0 2px;
   border-radius: 4px;
   background-color: var(--background-alt-color);
   color: var(--heading-font-color);
+  border: 1px solid var(--border-color);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
 }
 
 img,
